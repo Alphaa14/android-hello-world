@@ -2,9 +2,9 @@ pipeline {
     agent {
         label 'master'
     } 
-    // environment {
-    //     ANDROID_HOME = tool name: 'androidSdk'
-    // }
+    environment {
+        ANDROID_HOME = tool name: 'androidSdk'
+    }
     tools {
        gradle "562"
    }
