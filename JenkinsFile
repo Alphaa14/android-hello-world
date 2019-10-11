@@ -1,16 +1,26 @@
 pipeline {
     agent {
-
-            label 'master'
-    }
+        label 'master'
+    } 
+    // environment {
+    //     ANDROID_HOME = tool name: 'androidSdk'
+    // }
+    tools {
+       gradle "562"
+   }
     stages
     {
         stage("Build")
         {
             steps{
-                sh '''
-                echo 1321231213
-                '''
+                sh '''gradle --version'''
+                sh '''./gradlew build clean'''
+                echo "The build stage passed..."
+            }
+        }
+        stage("test") {
+            steps{
+                echo "The test stage passed..."
             }
         }
     }

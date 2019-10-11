@@ -11,4 +11,8 @@ android {
     versionCode 1
     versionName '1.0.0'
   }
-}
+  configurations.all {
+    resolutionStrategy {
+      force 'com.android.support:support-v4:27.1.0'
+    }
+}}
